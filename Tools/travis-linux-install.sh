@@ -33,9 +33,8 @@ case "$SWIGLANG" in
 	"javascript")
 		case "$ENGINE" in
 			"node")
-				travis_retry sudo add-apt-repository -y ppa:chris-lea/node.js
-				travis_retry sudo apt-get -qq update
-				travis_retry sudo apt-get install -qq nodejs rlwrap
+				travis_retry rm -rf ~/.nvm && git clone https://github.com/creationix/nvm.git ~/.nvm && (cd ~/.nvm && git checkout v0.33.2) && source ~/.nvm/nvm.sh
+				travis_retry nvm install $TRAVIS_NODE_VERSION
 				travis_retry sudo npm install -g node-gyp
 				;;
 			"jsc")
