@@ -2,19 +2,19 @@ language: cpp
 matrix:
   include:
     - os: linux
-      env: SWIGLANG=javascript ENGINE=node TRAVIS_NODE_VERSION="0.12" SWIG_CC=gcc-5 SWIG_CXX=g++-5 CPP11=1
+      env: SWIGLANG=javascript ENGINE=node TRAVIS_NODE_VERSION="0.12" V8_VERSION=0x032871 SWIG_CC=gcc-5 SWIG_CXX=g++-5
       sudo: required
       dist: trusty
     - os: linux
-      env: SWIGLANG=javascript ENGINE=node TRAVIS_NODE_VERSION="4" SWIG_CC=gcc-5 SWIG_CXX=g++-5 CPP11=1
+      env: SWIGLANG=javascript ENGINE=node TRAVIS_NODE_VERSION="4" SWIG_CC=gcc-5 SWIG_CXX=g++-5
       sudo: required
       dist: trusty
     - os: linux
-      env: SWIGLANG=javascript ENGINE=node TRAVIS_NODE_VERSION="6" SWIG_CC=gcc-5 SWIG_CXX=g++-5 CPP11=1
+      env: SWIGLANG=javascript ENGINE=node TRAVIS_NODE_VERSION="6" SWIG_CC=gcc-5 SWIG_CXX=g++-5
       sudo: required
       dist: trusty
     - os: linux
-      env: SWIGLANG=javascript ENGINE=node TRAVIS_NODE_VERSION="8" SWIG_CC=gcc-5 SWIG_CXX=g++-5 CPP11=1
+      env: SWIGLANG=javascript ENGINE=node TRAVIS_NODE_VERSION="8" SWIG_CC=gcc-5 SWIG_CXX=g++-5
       sudo: required
       dist: trusty
 before_install:
