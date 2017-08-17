@@ -33,7 +33,7 @@ case "$SWIGLANG" in
 	"javascript")
 		case "$ENGINE" in
 			"node")
-				travis_retry rm -rf ~/.nvm && git clone https://github.com/creationix/nvm.git ~/.nvm && (cd ~/.nvm && git checkout v0.33.2) && source ~/.nvm/nvm.sh
+				travis_retry rm -rf ~/.nvm && git clone https://github.com/creationix/nvm.git ~/.nvm && (cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`) && source ~/.nvm/nvm.sh
 				travis_retry nvm install $TRAVIS_NODE_VERSION
 				travis_retry npm install -g node-gyp
 				;;
