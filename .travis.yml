@@ -1,18 +1,22 @@
 language: cpp
 matrix:
   include:
-    - compiler: gcc
-      os: linux
-      env: SWIGLANG=javascript ENGINE=node TRAVIS_NODE_VERSION="0.12"
-    - compiler: gcc
-      os: linux
-      env: SWIGLANG=javascript ENGINE=node TRAVIS_NODE_VERSION="4"
-    - compiler: gcc
-      os: linux
-      env: SWIGLANG=javascript ENGINE=node TRAVIS_NODE_VERSION="6"
-    - compiler: gcc
-      os: linux
-      env: SWIGLANG=javascript ENGINE=node TRAVIS_NODE_VERSION="8"
+    - os: linux
+      env: SWIGLANG=javascript ENGINE=node TRAVIS_NODE_VERSION="0.12" SWIG_CC=gcc-5 SWIG_CXX=g++-5 CPP11=1
+      sudo: required
+      dist: trusty
+    - os: linux
+      env: SWIGLANG=javascript ENGINE=node TRAVIS_NODE_VERSION="4" SWIG_CC=gcc-5 SWIG_CXX=g++-5 CPP11=1
+      sudo: required
+      dist: trusty
+    - os: linux
+      env: SWIGLANG=javascript ENGINE=node TRAVIS_NODE_VERSION="6" SWIG_CC=gcc-5 SWIG_CXX=g++-5 CPP11=1
+      sudo: required
+      dist: trusty
+    - os: linux
+      env: SWIGLANG=javascript ENGINE=node TRAVIS_NODE_VERSION="8" SWIG_CC=gcc-5 SWIG_CXX=g++-5 CPP11=1
+      sudo: required
+      dist: trusty
 before_install:
   - date -u
   - uname -a
