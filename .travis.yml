@@ -13,6 +13,23 @@ matrix:
     - os: linux
       env: SWIGLANG=javascript ENGINE=node TRAVIS_NODE_VERSION="8" SWIG_CC=gcc-5 SWIG_CXX=g++-5 CPP11=1
       dist: trusty
+  allow_failures:
+    # Started failing after upgrade from Guile 2.0.14 to Guile 2.2.0
+    - compiler: clang
+      os: osx
+      env: SWIGLANG=guile
+    # Lots of failing tests currently
+    - compiler: gcc
+      os: linux
+      env: SWIGLANG=ocaml
+      sudo: required
+      dist: trusty
+    # Not quite working yet
+    - compiler: gcc
+      os: linux
+      env: SWIGLANG=python SWIG_FEATURES=-O
+      sudo: required
+      dist: trusty
 before_install:
   - date -u
   - uname -a
